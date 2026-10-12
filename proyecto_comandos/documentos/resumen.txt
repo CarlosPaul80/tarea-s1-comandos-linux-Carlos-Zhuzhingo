@@ -1,0 +1,4 @@
+Primera linea: aprendo a crear carpetas en Linux.
+Segunda linea: practico la manipulacion de archivos.
+Tercera linea: utilizo redireccionamiento desde Bash.
+Cuarta linea: agrego informacion sin sobrescribir el contenido.

@@ -1,0 +1,29 @@
+    1  pwd
+    2  bash --version | head -n 1
+    3  mkdir proyecto_comandos
+    4  cd proyecto_comandos
+    5  mkdir documentos imagenes scripts
+    6  ls -d */
+    7  touch documentos/notas.txt
+    8  echo "Primera linea: aprendo a crear carpetas en Linux." > documentos/notas.txt
+    9  echo "Segunda linea: practico la manipulacion de archivos." >> documentos/notas.txt
+   10  echo "Tercera linea: utilizo redireccionamiento desde Bash." >> documentos/notas.txt
+   11  cat documentos/notas.txt
+   12  cp documentos/notas.txt scripts/backup_notas.txt
+   13  ls scripts
+   14  mv scripts/backup_notas.txt imagenes/backup_notas.txt
+   15  ls imagenes
+   16  ls -A scripts
+   17  touch documentos/resumen.txt
+   18  cat documentos/notas.txt > documentos/resumen.txt
+   19  echo "Cuarta linea: agrego informacion sin sobrescribir el contenido." >> documentos/resumen.txt
+   20  cat documentos/resumen.txt
+   21  rm imagenes/backup_notas.txt
+   22  ls -A imagenes
+   23  rmdir imagenes
+   24  find . -maxdepth 2 -print | sort
+   25  test ! -e imagenes && echo "VERIFICADO: imagenes fue eliminada."
+   26  test ! -e scripts/backup_notas.txt && echo "VERIFICADO: no queda la copia de respaldo."
+   27  wc -l documentos/notas.txt documentos/resumen.txt
+   28  head -n 3 documentos/resumen.txt | cmp - documentos/notas.txt && echo "VERIFICADO: resumen conserva las tres lineas originales."
+   29  history | tee ../tarea-s1-Carlos_Zhuzhingo.txt
