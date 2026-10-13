@@ -6,7 +6,7 @@
 
 ## 1. Título
 
-Creación y manipulación de archivos en Linux.
+Crear carpetas y trabajar con archivos en Linux.
 
 ## 2. Tiempo de duración
 
@@ -14,17 +14,17 @@ Aproximadamente 25 minutos.
 
 ## 3. Fundamentos
 
-En esta práctica se usan comandos para crear carpetas y trabajar con archivos desde la terminal. La terminal es una ventana donde se escriben instrucciones para que el computador realice una acción. Para desarrollar la actividad se utilizó Git Bash en Windows, que permite practicar los comandos indicados en la tarea.
+En esta práctica se usan comandos para crear carpetas y trabajar con archivos desde la terminal. La terminal es una ventana donde escribimos lo que queremos que haga el computador. Para esta práctica usé Git Bash en Windows, donde pude trabajar con los comandos que pide la tarea.
 
-Las carpetas ayudan a mantener los archivos ordenados. En este caso, proyecto_comandos es la carpeta principal y dentro se crean documentos, imagenes y scripts. El comando mkdir sirve para crear estas carpetas. Con cd se entra en una carpeta para continuar trabajando dentro de ella. Antes de crear o mover un archivo, es importante comprobar en qué carpeta se está trabajando para evitar guardarlo en otro lugar.
+Las carpetas ayudan a mantener los archivos ordenados. En este caso, proyecto_comandos es la carpeta principal y dentro se crean documentos, imagenes y scripts. El comando mkdir sirve para crear estas carpetas. Con cd se entra en una carpeta para trabajar dentro de ella. Antes de crear o mover un archivo, hay que revisar en qué carpeta estamos para no guardarlo en otro lugar.
 
-Los archivos de texto permiten guardar información escrita. Con touch se puede crear un archivo vacío y con echo se pueden escribir líneas de texto. El comando cat permite leer lo que contiene el archivo y revisar si las líneas se guardaron correctamente. En notas.txt se escribieron tres líneas relacionadas con la práctica.
+Los archivos de texto sirven para guardar lo que escribimos. Con touch se puede crear un archivo vacío y con echo se pueden escribir líneas de texto. El comando cat permite leer lo que contiene el archivo y revisar si las líneas se guardaron bien. En notas.txt se escribieron tres líneas relacionadas con la práctica.
 
-Para guardar texto se usan los símbolos > y >>. El primero escribe en el archivo, pero reemplaza lo que tenía antes. El segundo agrega texto al final y conserva las líneas anteriores. Esta diferencia es necesaria para crear el resumen y añadir una línea nueva sin perder las notas originales.
+Para guardar texto se usan los símbolos > y >>. El primero escribe en el archivo, pero reemplaza lo que tenía antes. El segundo agrega texto al final y conserva las líneas anteriores. Esto sirve para crear el resumen y agregar una línea nueva sin perder las notas que ya estaban guardadas.
 
-El comando cp sirve para copiar un archivo y conservar el original. También permite darle otro nombre a la copia. El comando mv se usa para mover un archivo de una carpeta a otra. Para eliminar un archivo se utiliza rm. Si se quiere eliminar una carpeta vacía, se utiliza rmdir. Por eso, primero se borra el respaldo y después la carpeta imagenes.
+El comando cp sirve para copiar un archivo sin borrar el original. Al hacer la copia, también se le puede poner otro nombre. El comando mv se usa para mover un archivo de una carpeta a otra. Para borrar un archivo se usa rm. Para borrar una carpeta vacía, se usa rmdir. Por eso, primero se borra el respaldo y después la carpeta imagenes.
 
-Finalmente, history permite consultar los comandos usados. El símbolo |, llamado tubería, pasa la salida de un comando a otro. Al escribir history | tee seguido del nombre del archivo, el historial se muestra en la terminal y también se guarda. Este archivo sirve como registro de los pasos realizados en la práctica.
+Con history se pueden ver los comandos que se usaron. El símbolo |, llamado tubería, pasa la salida de un comando a otro. Al escribir history | tee seguido del nombre del archivo, el historial se muestra en la terminal y también se guarda. En este archivo quedan guardados los comandos que usamos durante la práctica.
 
 ![Estructura de las carpetas](evidencias/estructura.png)
 
@@ -38,10 +38,10 @@ Finalmente, history permite consultar los comandos usados. El símbolo |, llamad
 
 ## 5. Objetivos a alcanzar
 
-- Crear las carpetas y archivos solicitados.
-- Copiar, cambiar de nombre, mover y eliminar archivos.
-- Guardar texto y añadir líneas sin borrar el contenido anterior.
-- Guardar el historial de comandos mediante una tubería.
+- Crear las carpetas y archivos que pide la tarea.
+- Copiar, cambiar de nombre, mover y borrar archivos.
+- Guardar texto y agregar líneas sin borrar lo que ya estaba escrito.
+- Guardar el historial de comandos usando una tubería.
 
 ## 6. Equipo necesario
 
@@ -53,11 +53,11 @@ Finalmente, history permite consultar los comandos usados. El símbolo |, llamad
 
 - Indicaciones de la tarea autónoma de la semana 1.
 - [Plantilla del informe](https://github.com/maguaman2/informe-tendencias/blob/main/informe.md).
-- Manuales de Bash y de los comandos utilizados.
+- Manuales de Bash y de los comandos usados.
 
 ## 8. Procedimiento
 
-### Paso 1. Crear la estructura de carpetas
+### Paso 1. Crear las carpetas
 
 Creé la carpeta proyecto_comandos. Dentro de ella creé documentos, imagenes y scripts.
 
@@ -81,9 +81,9 @@ cp documentos/notas.txt scripts/backup_notas.txt
 mv scripts/backup_notas.txt imagenes/backup_notas.txt
 ```
 
-### Paso 3. Crear el resumen y añadir una línea
+### Paso 3. Crear el resumen y agregar una línea
 
-Creé resumen.txt en documentos y guardé en él el contenido de notas.txt. Luego añadí una cuarta línea usando >> para conservar las anteriores.
+Creé resumen.txt en documentos y guardé ahí el texto de notas.txt. Después agregué una cuarta línea usando >> para no borrar las tres primeras.
 
 ```bash
 touch documentos/resumen.txt
@@ -92,9 +92,9 @@ echo "Cuarta linea: agrego informacion sin sobrescribir el contenido." >> docume
 cat documentos/resumen.txt
 ```
 
-### Paso 4. Eliminar el respaldo y la carpeta imagenes
+### Paso 4. Borrar el respaldo y la carpeta imagenes
 
-Eliminé backup_notas.txt. Revisé que imagenes estuviera vacía y después eliminé la carpeta.
+Borré backup_notas.txt. Revisé que imagenes estuviera vacía y después borré la carpeta.
 
 ```bash
 rm imagenes/backup_notas.txt
@@ -110,13 +110,13 @@ Guardé el historial con mi nombre usando una tubería. Ejecuté el comando desd
 history | tee ../tarea-s1-Carlos_Zhuzhingo.txt
 ```
 
-El historial se encuentra en [tarea-s1-Carlos_Zhuzhingo.txt](tarea-s1-Carlos_Zhuzhingo.txt).
+El historial está en [tarea-s1-Carlos_Zhuzhingo.txt](tarea-s1-Carlos_Zhuzhingo.txt).
 
 ## 9. Resultados esperados
 
-Al finalizar, notas.txt quedó con tres líneas y resumen.txt con cuatro. El resumen conserva las tres líneas originales y la línea que se añadió al final. El archivo backup_notas.txt y la carpeta imagenes fueron eliminados. La carpeta scripts quedó vacía.
+Después de hacer los pasos, notas.txt quedó con tres líneas y resumen.txt con cuatro. El resumen tiene las tres líneas de las notas y la que agregué al final. Borré backup_notas.txt y la carpeta imagenes. La carpeta scripts quedó vacía.
 
-La estructura final fue la siguiente:
+Las carpetas y archivos quedaron así:
 
 ```text
 proyecto_comandos/
@@ -130,7 +130,7 @@ proyecto_comandos/
 
 *Figura 2. Resultado final mostrado en el visor del registro de Git Bash.*
 
-El informe y el historial están guardados en el repositorio. También se incluye el [audio de 60 segundos en MP3](tarea-s1-Carlos_Zhuzhingo.mp3), donde explico lo aprendido.
+El informe y el historial están guardados en el repositorio. También está el [audio de 60 segundos en MP3](tarea-s1-Carlos_Zhuzhingo.mp3), donde explico lo aprendido.
 
 ## 10. Bibliografía
 
